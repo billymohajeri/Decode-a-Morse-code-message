@@ -33,11 +33,10 @@ end
 # (e.g. decode("-- -.--   -. .- -- .") returns "MY NAME").
 
 def decode_sentence(sentence)
-  my_sentence = []
+  my_sentence = ''
   sentence.split('   ').each do |word|
-    my_sentence.push(decode_word(word))
+    my_sentence += "#{decode_word(word)} "
   end
-  my_sentence = my_sentence.join(" ")
   my_sentence
 end
 
