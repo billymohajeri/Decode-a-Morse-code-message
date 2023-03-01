@@ -1,1 +1,29 @@
-puts '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'
+# Create a method to decode a Morse code character,
+# takes a string parameter, and return the corresponding character in uppercase
+# (e.g. decode_char(".-") returns "A").
+
+def decode_char(char)
+  morse = {
+    '.-' => 'A', '-...' => 'B', '-.-.' => 'C', '-..' => 'D', '.' => 'E',
+    '..-.' => 'F', '--.' => 'G', '....' => 'H', '..' => 'I', '.---' => 'J',
+    '-.-' => 'K', '.-..' => 'L', '--' => 'M', '-.' => 'N', '---' => 'O',
+    '.--.' => 'P', '--.-' => 'Q', '.-.' => 'R', '...' => 'S', '-' => 'T',
+    '..-' => 'U', '...-' => 'V', '.--' => 'W', '-..-' => 'X', '-.--' => 'Y',
+    '--..' => 'Z', '-----' => '0', '.----' => '1', '..---' => '2', '...--' => '3',
+    '....-' => '4', '.....' => '5', '-....' => '6', '--...' => '7', '---..' => '8',
+    '----.' => '9'
+  }
+  morse[char]
+end
+
+# Create a method to decode an entire word in Morse code, takes a string parameter,
+# and return the string representation. Every character in a word will be separated
+# by a single space (e.g. decode_word("-- -.--") returns "MY").
+
+def decode_word(word)
+  my_word = ''
+  word.split.each do |char|
+    my_word += decode_char(char)
+  end
+  my_word
+end
