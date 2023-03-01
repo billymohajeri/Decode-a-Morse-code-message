@@ -27,3 +27,18 @@ def decode_word(word)
   end
   my_word
 end
+
+# Create a method to decode the entire message in Morse code, takes a string parameter, 
+# and return the string representation. Every word will be separated by 3 spaces 
+# (e.g. decode("-- -.--   -. .- -- .") returns "MY NAME").
+
+def decode_sentence(sentence)
+  my_sentence = []
+  sentence.split('   ').each do |word|
+    my_sentence.push(decode_word(word))
+  end
+  my_sentence = my_sentence.join(" ")
+  my_sentence
+end
+
+puts decode_sentence('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
